@@ -1,3 +1,5 @@
+"""Provides tools for editing video content."""
+
 import re
 import subprocess
 from pathlib import Path

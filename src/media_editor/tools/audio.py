@@ -1,3 +1,5 @@
+"""Provides tools for editing audio content."""
+
 import subprocess
 from pathlib import Path
 
