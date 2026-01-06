@@ -31,7 +31,7 @@ uv sync
 ### Running the MCP Server
 
 ```bash
-uv run media-editor
+uv run media-editor mcp
 ```
 
 ### Connecting to Claude Desktop
@@ -43,7 +43,7 @@ Add the following to your Claude Desktop configuration (`claude_desktop_config.j
   "mcpServers": {
     "media-editor": {
       "command": "uv",
-      "args": ["run", "media-editor"],
+      "args": ["run", "media-editor", "mcp"],
       "cwd": "/path/to/media-editor"
     }
   }
@@ -57,7 +57,7 @@ Add the following to your Claude Desktop configuration (`claude_desktop_config.j
 uv run pytest
 
 # Type checking
-uv run mypy src/
+uv run pyright
 
 # Linting
 uv run ruff check src/

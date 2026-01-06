@@ -61,6 +61,12 @@ The MCP server runs as a command-line application via Typer. FastMCP handles the
 
 Thumbnails support selectable themes that define visual styling (colors, fonts, layouts). Themes are reusable across different video types. The thumbnail tool accepts a title, subtitle, and theme name, generates the thumbnail image, and prepends it as a video segment.
 
+## Code Style
+
+- **Docstrings**: Use NumPy style docstrings for all functions and classes
+- **Type hints**: Use Python 3.12+ type hints (e.g., `float | str` instead of `Union[float, str]`)
+- **Linting/Formatting**: Use ruff for linting (`uv run ruff check src/`) and formatting (`uv run ruff format src/`)
+
 ## External Dependencies
 
 - **FFmpeg**: Must be installed on the system and available in PATH
