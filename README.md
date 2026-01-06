@@ -19,8 +19,20 @@ An MCP (Model Context Protocol) server that provides tools for editing media fil
 
 ### Installation
 
+This repository uses Git LFS to store test video files. Install Git LFS before cloning:
+
 ```bash
-# Clone the repository
+# Install Git LFS (macOS)
+brew install git-lfs
+
+# Initialize Git LFS
+git lfs install
+```
+
+Then clone and install:
+
+```bash
+# Clone the repository (LFS files are fetched automatically)
 git clone https://github.com/wmeints/media-editor.git
 cd media-editor
 
