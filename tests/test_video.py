@@ -1,4 +1,6 @@
+import subprocess
 from pathlib import Path
+from unittest.mock import patch
 
 import pytest
 
@@ -90,3 +92,14 @@ class TestTrimVideo:
 
         with pytest.raises(ValueError, match="At least one of"):
             trim_video(str(TEST_VIDEO), str(output_path))
+
+    def test_raises_on_ffmpeg_failure(self, tmp_path: Path) -> None:
+        output_path = tmp_path / "output.mp4"
+
+        with patch("media_editor.tools.video.subprocess.run") as mock_run:
+            mock_run.side_effect = subprocess.CalledProcessError(
+                returncode=1, cmd=["ffmpeg"], stderr="FFmpeg error"
+            )
+
+            with pytest.raises(subprocess.CalledProcessError):
+                trim_video(str(TEST_VIDEO), str(output_path), start_offset=1)
