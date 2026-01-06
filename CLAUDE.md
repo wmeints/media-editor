@@ -34,7 +34,7 @@ uv run pytest
 uv run pytest tests/test_file.py::test_function -v
 
 # Type checking
-uv run mypy src/
+uv run pyright src/
 
 # Linting
 uv run ruff check src/
