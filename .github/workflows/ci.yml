@@ -12,6 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
 
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
@@ -35,3 +37,5 @@ jobs:
 
       - name: Run tests
         run: uv run pytest
+        env:
+          PATH: /usr/bin:/usr/local/bin:${{ env.PATH }}
