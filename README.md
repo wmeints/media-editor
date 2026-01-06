@@ -40,6 +40,16 @@ cd media-editor
 uv sync
 ```
 
+### Verifying Your Setup
+
+Run the `doctor` command to check that all required dependencies are installed and available:
+
+```bash
+uv run media-editor doctor
+```
+
+If successful, you'll see the path to FFmpeg. If FFmpeg is missing, install it and ensure it's in your PATH.
+
 ### Running the MCP Server
 
 ```bash
